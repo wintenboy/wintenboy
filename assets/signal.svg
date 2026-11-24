@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 128" width="800" height="128" role="img" aria-labelledby="title description">
+  <title id="title">Illustrative time series</title>
+  <desc id="description">A signal draws from left to right. A single high observation lights up as the line passes it.</desc>
+  <style>
+    :root { --paper: #f6f8fb; --grid: #dde3ec; --ink: #2b5e9d; --point: #af492c; }
+    .paper { fill: var(--paper); }
+    .grid { stroke: var(--grid); }
+    .trace { stroke: var(--ink); stroke-dasharray: 1; animation: draw 1.8s cubic-bezier(.28,.58,.32,1) .12s both; }
+    .marker { fill: var(--point); animation: appear .36s ease-out 1.22s both; }
+    .ring { stroke: var(--point); animation: echo .85s ease-out 1.22s both; }
+    @media (prefers-color-scheme: dark) {
+      :root { --paper: #161d27; --grid: #2a3647; --ink: #8ab9f6; --point: #f59a76; }
+    }
+    @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+    @keyframes appear { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes echo { 0% { opacity: 0; stroke-width: 6; } 32% { opacity: .32; } 100% { opacity: 0; stroke-width: 19; } }
+    @media (prefers-reduced-motion: reduce) {
+      .trace, .marker, .ring { animation: none; }
+      .ring { opacity: 0; }
+    }
+  </style>
+  <rect class="paper" width="800" height="128" rx="8" />
+  <path class="grid" d="M26 33H774 M26 64H774 M26 95H774 M26 24V104 M151 24V104 M276 24V104 M400 24V104 M524 24V104 M649 24V104 M774 24V104" fill="none" />
+  <path class="trace" pathLength="1" d="M26 77 L42 73 57 72 73 77 88 65 104 69 120 61 136 66 151 62 167 69 182 74 198 69 213 63 229 66 245 58 260 64 276 69 292 65 307 73 323 76 339 69 354 72 370 63 386 65 400 71 416 62 432 59 447 67 463 64 479 48 493 22 508 77 524 59 540 65 555 62 571 68 587 72 602 70 618 64 634 69 649 61 665 57 680 63 696 70 711 66 727 73 743 69 759 61 774 66" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+  <circle class="ring" cx="493" cy="22" r="5.5" fill="none" opacity="0" />
+  <circle class="marker" cx="493" cy="22" r="4.75" />
+</svg>
